@@ -2,8 +2,8 @@
  A discord HYPERate HR RPC
 
 # How to use
-install the project to a folder \n
-install node.js from https://nodejs.org/en/ \n
+install the project to a folder 
+install node.js from https://nodejs.org/en/ 
 open cmd in folder of the project
 run ```npm i```
 then open the config.json and put your id into the config
