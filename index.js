@@ -30,11 +30,6 @@ setInterval(function(){ // gotta keep the server HB alive
   console.log("refresh!")
 }, 28000); // 28 seconds to have a 2 sec delay for ping
 
-connection.on("error", error => {
-  console.log(error)  //check the error :)
-  connection.close(); //close on error
-})
-
 connection.on("message", async message => {
   var xd = JSON.parse(message)
               //hahah funny XD
