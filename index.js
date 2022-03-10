@@ -1,7 +1,8 @@
-const client = require('discord-rich-presence')('863142243586277386');
+const config = require("./config.json")
+const client = require('discord-rich-presence')(config.RPCID);
 require("dotenv").config()                      //the id of the discord app
 const WebSocket = require('ws');
-const config = require("./config.json")
+
 const url = `wss://app.hyperate.io/socket/websocket?token=${process.env.KEY}`
 const connection = new WebSocket(url)                       //special key :3
 
@@ -38,8 +39,8 @@ connection.on("message", async message => {
   client.updatePresence({
     state: `heart rate`,
     details: `${xd.payload.hr}`, //the actual HR update
-    largeImageKey: 'bloodrose', // the big image use for the whole thing
-    smallImageKey: 'heart', // the small image used in the corner
+    largeImageKey: config.LargeIcon, // the big image use for the whole thing
+    smallImageKey: config.SmallIcon, // the small image used in the corner
     instance: true, //no clue what this does tbh
   });
 })
