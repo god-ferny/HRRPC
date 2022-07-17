@@ -12,7 +12,7 @@ run ```npm i```
 
 then open the config.json and put your id into the config
 
-then ```node index.js``` as i havent setup a node run start script yet adding it to the to do
+then ```npm run start``` as i havent setup a node run start script yet adding it to the to do
 
 
 # How to customize your thingy
@@ -29,3 +29,9 @@ copy the id and change the RPC id in the config to the app id of your discord RP
 
 
 i will try to update these instructions when i need to
+
+
+
+# changelog
+no more undefined! will hang on the last number for a second
+key! key! key!

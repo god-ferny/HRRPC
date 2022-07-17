@@ -3,7 +3,7 @@ const client = require('discord-rich-presence')(config.RPCID);
 require("dotenv").config()                      //the id of the discord app
 const WebSocket = require('ws');
 
-const url = `wss://app.hyperate.io/socket/websocket?token=${process.env.KEY}`
+const url = `wss://app.hyperate.io/socket/websocket?token=${config.key}`
 const connection = new WebSocket(url)                       //special key :3
 
 const msg = {
@@ -20,6 +20,7 @@ const msg2 = {
 	"payload": {},
 	"ref": 0
 }
+
 connection.on("open", () =>{
     //console logging go brrrrrr
   console.log("opened") // make sure it opened correctly
@@ -29,12 +30,15 @@ connection.on("open", () =>{
 setInterval(function(){ // gotta keep the server HB alive
   connection.send(JSON.stringify(msg2))
   console.log("refresh!")
-}, 28000); // 28 seconds to have a 2 sec delay for ping
+}, 10000); // 28 seconds to have a 2 sec delay for ping
 
 connection.on("message", async message => {
+  
   var xd = JSON.parse(message)
               //hahah funny XD
   console.log(xd.payload) // console spam go  BRRRRRRRRRRRRRRRRR
+
+  if(!xd) return;
 
   client.updatePresence({
     state: `heart rate`,
