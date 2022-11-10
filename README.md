@@ -33,5 +33,6 @@ i will try to update these instructions when i need to
 
 
 # changelog
-no more undefined! will hang on the last number for a second
-key! key! key!
+~~no more undefined! will hang on the last number for a second~~
+~~this broke for some reason~~
+refixed was missing the specific check for the payload
